@@ -19,6 +19,7 @@ export default function Login({ navigation }) {
   const [user, setUser] = useState('');
 
   useEffect(() => {
+    console.log('ai papai aqui chegou');
     AsyncStorage.getItem('user').then(user => {
       if (user) {
         navigation.navigate('Main', { user });
@@ -36,7 +37,7 @@ export default function Login({ navigation }) {
 
     console.log('User', _id);
     navigation.navigate('Main', {
-      _id
+      user: _id
     });
   }
 
