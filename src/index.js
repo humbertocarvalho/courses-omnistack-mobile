@@ -1,24 +1,6 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import Login from './pages/Login';
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text style={styles.text}>Hello World</Text>
-    </View>
-  );
+  return <Login />;
 }
-
-const styles = StyleSheet.create({
-  container: {
-    backgroundColor: '#7159c1',
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center'
-  },
-  text: {
-    fontWeight: 'bold',
-    color: '#FFF',
-    fontSize: 20
-  }
-});
