@@ -7,15 +7,25 @@ import {
   TextInput,
   TouchableOpacity
 } from 'react-native';
+
+import api from '../services/api';
 //import logo from '../assets/logo.png';
 
 // import { Container } from './styles';
 
 export default function Login({ navigation }) {
   const [user, setUser] = useState('');
-  function handleLogin() {
-    console.log('User', user);
-    navigation.navigate('Main');
+  async function handleLogin() {
+    const response = await api.post('/devs', {
+      username: user
+    });
+
+    const { _id } = response.data;
+
+    console.log('User', _id);
+    navigation.navigate('Main', {
+      _id
+    });
   }
 
   return (
